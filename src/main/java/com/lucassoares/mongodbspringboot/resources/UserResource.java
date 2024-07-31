@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.lucassoares.mongodbspringboot.domain.User;
+import com.lucassoares.mongodbspringboot.dto.UserDTO;
 import com.lucassoares.mongodbspringboot.services.UserService;
 
 @RestController
@@ -18,9 +18,13 @@ public class UserResource {
 	private UserService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<List<User>> findAll() {		
+	public ResponseEntity<List<UserDTO>> findAll() {		
 		List<User> list = service.findAll();
-		return ResponseEntity.ok(list);
+		List<UserDTO> listDto = list
+				.stream()
+				.map(x -> new UserDTO(x))
+				.toList();
+		return ResponseEntity.ok(listDto);
 	}
 
 }

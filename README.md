@@ -20,4 +20,48 @@ Spring boot com MongoDB é uma aplicação Back-End cuja principal finalidade é
 
 ### Modelo de domínio
 
+![img.png](assets/img.png)
+
+### Instância de domínio
+
+![img.png](assets/img2.png)
+
+### Camadas lógicas
+
+![img.png](assets/img3.png)
+
+# Tecnologias usadas
+
+## Back-End
+
+- Java
+- Spring Boot
+- Spring Data MongoDB
+- Postman
+- Apache Tomcat
+- Maven
+
+## Banco de dados
+
+- MongoDB
+
+# Como executar o projeto
+
+## Back-End
+
+Pré-requisitos: Java 21
+
+```bash
+# clonar repositório
+git clone git@github.com:lucas-csoares/mongodb-springBoot.git
+
+# executar o projeto
+./mvnw spring-boot:run
+```
+
+# Autor
+
+Lucas Cabral Soares
+
+
 
